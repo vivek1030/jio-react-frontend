@@ -1,0 +1,39 @@
+$primary-color: #0f3cc9;
+$text-color-primary: #fff;
+$text-color-secondary: #000;
+
+.main-header {
+  background-color: $primary-color;
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 1.4rem 0;
+    .brand {
+      margin-right: 2rem;
+      .logo {
+        width: 100%;
+        max-width: 70px;
+      }
+    }
+  }
+}
+
+.navbar-menu-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  .navbar-menu-list {
+    list-style: none;
+    display: flex;
+    .navbar-menu-item {
+      padding: 0 0.5rem;
+      .navbar-menu-link {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: $text-color-primary;
+      }
+    }
+  }
+}
