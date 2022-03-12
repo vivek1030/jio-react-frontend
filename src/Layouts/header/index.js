@@ -1,4 +1,7 @@
 import Logo from "../../Assets/img/Jio-Logo.png";
+import CartIcon from "../../Assets/svg/cart.svg";
+import AccountIcon from "../../Assets/svg/account.svg";
+import QuestionIcon from "../../Assets/svg/question.svg";
 import "./Header.scss";
 
 function Header() {
@@ -30,8 +33,9 @@ function NavMenu() {
           );
         })}
       </ul>
-      <div className="">
+      <div className="action-box">
         <SearchBox />
+        <ActionButtons />
       </div>
     </div>
   );
@@ -39,9 +43,25 @@ function NavMenu() {
 
 function SearchBox() {
   return (
-    <>
-      <input type="text" />
-    </>
+    <div className="search-box">
+        <input type='text' className="inputbox" placeholder="Search"/>
+    </div>
+  );
+}
+
+function ActionButtons() {
+  return (
+    <div className="action-content">
+      <span className="action-item">
+        <img src={CartIcon} className="action-icon" />
+      </span>
+      <span className="action-item">
+        <img src={AccountIcon} className="action-icon" />
+      </span>
+      <span className="action-item">
+        <img src={QuestionIcon} className="action-icon" />
+      </span>
+    </div>
   );
 }
 
