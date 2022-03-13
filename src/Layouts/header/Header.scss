@@ -35,10 +35,10 @@ $text-color-secondary: #000;
         text-decoration: none;
         font-size: 1.2rem;
         color: $text-color-primary;
-        transition: .2s ease;
-        &:hover{
-            text-decoration: underline;
-            opacity: 0.8;
+        transition: 0.2s ease;
+        &:hover {
+          text-decoration: underline;
+          opacity: 0.8;
         }
       }
     }
@@ -95,12 +95,48 @@ $text-color-secondary: #000;
     }
   }
   &::before {
-    content:'\26B2';
+    content: "\26B2";
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
     font-size: 1.5rem;
-    color:$text-color-primary;
+    color: $text-color-primary;
+  }
+}
+
+// Bottom heade menu
+.bottom-header-menu {
+  background-color: $primary-color-deep;
+  .bottom-header-menu-wrapper {
+    .bottom-header-menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .bottom-header-menu-item {
+        padding: 1rem 1rem;
+        position: relative;
+        .bottom-header-menu-link {
+          color: $text-color-primary;
+          text-decoration: none;
+          font-size: 1rem;
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+        &:hover ::after {
+          content: "";
+          content: "";
+          width: 85%;
+          height: 4px;
+          background-color: $text-color-primary;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+        }
+      }
+    }
   }
 }

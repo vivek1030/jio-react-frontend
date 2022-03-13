@@ -6,14 +6,17 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <div className="main-header">
-      <div className="navbar wrap-content">
-        <div className="brand">
-          <img src={Logo} className="logo" />
+    <>
+      <div className="main-header">
+        <div className="navbar wrap-content">
+          <div className="brand">
+            <img src={Logo} className="logo" />
+          </div>
+          <NavMenu />
         </div>
-        <NavMenu />
       </div>
-    </div>
+      <BottomHeaderMenu />
+    </>
   );
 }
 
@@ -44,7 +47,7 @@ function NavMenu() {
 function SearchBox() {
   return (
     <div className="search-box">
-        <input type='text' className="inputbox" placeholder="Search"/>
+      <input type="text" className="inputbox" placeholder="Search" />
     </div>
   );
 }
@@ -61,6 +64,34 @@ function ActionButtons() {
       <span className="action-item">
         <img src={QuestionIcon} className="action-icon" />
       </span>
+    </div>
+  );
+}
+
+function BottomHeaderMenu() {
+  const menuList = [
+    "Discover",
+    "Prepaid",
+    "Postpaid",
+    "Get Jio SIM",
+    "Recharge",
+    "Pay Bill",
+  ];
+  return (
+    <div className="bottom-header-menu">
+      <div className="bottom-header-menu-wrapper wrap-content">
+        <ul className="bottom-header-menu-list">
+          {menuList.map((elem, i) => {
+            return (
+              <li className="bottom-header-menu-item" key={i}>
+                <a href="#" className="bottom-header-menu-link">
+                  {elem}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
